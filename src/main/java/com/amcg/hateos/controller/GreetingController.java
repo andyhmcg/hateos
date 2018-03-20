@@ -29,7 +29,7 @@ public class GreetingController {
     }
 
 
-    
+
     @PutMapping("/greeting")
     public HttpEntity<Greeting> putGreeting(
             @RequestParam(value = "name", required = false, defaultValue = "World") String name) {
