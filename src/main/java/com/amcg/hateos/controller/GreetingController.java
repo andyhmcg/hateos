@@ -28,11 +28,7 @@ public class GreetingController {
         return new ResponseEntity<>(greeting, HttpStatus.OK);
     }
 
-    /**
-     * 
-     * @param name
-     * @return
-     */
+    
     @PutMapping("/greeting")
     public HttpEntity<Greeting> putGreeting(
             @RequestParam(value = "name", required = false, defaultValue = "World") String name) {
