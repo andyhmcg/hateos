@@ -29,11 +29,17 @@ public class GreetingController {
     }
 
 
+    /**
+     *
+     * @param name
+     * @return
+     */
     @PutMapping("/greeting")
     public HttpEntity<Greeting> putGreeting(
             @RequestParam(value = "name", required = false, defaultValue = "World") String name) {
 
         Greeting greeting = new Greeting(String.format(TEMPLATE, name));
+
         greeting.add(linkTo(methodOn(GreetingController.class).greeting(name)).withSelfRel());
 
         return new ResponseEntity<>(greeting, HttpStatus.OK);
