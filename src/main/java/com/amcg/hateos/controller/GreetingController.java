@@ -29,11 +29,7 @@ public class GreetingController {
     }
 
 
-    /**
-     *
-     * @param name
-     * @return
-     */
+    
     @PutMapping("/greeting")
     public HttpEntity<Greeting> putGreeting(
             @RequestParam(value = "name", required = false, defaultValue = "World") String name) {
