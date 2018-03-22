@@ -1,6 +1,9 @@
 pipeline {
     agent any
 
+    triggers {
+        scm 'H/5 * * * *'
+    }
     stages {
         stage('Build') {
             steps {
